@@ -14,18 +14,19 @@
         }
 
         body {
-            color: #111827;
-            background-color: #ffffff;
+            background-color: #071527;
+            color: #f1f5f9;
             line-height: 1.6;
         }
 
-        /* Header */
+        /* Header & Navigation */
         header {
-            background-color: #ffffff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            background-color: #0c1e38;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
             position: sticky;
             top: 0;
             z-index: 1000;
+            border-bottom: 1px solid #1e3a5f;
         }
 
         .nav-container {
@@ -40,19 +41,22 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             text-decoration: none;
         }
 
         .logo img {
-            height: 40px;
+            height: 44px;
             width: auto;
+            border-radius: 4px;
+            background: #ffffff;
+            padding: 2px 6px;
         }
 
         .logo-text {
-            font-size: 1.3rem;
+            font-size: 1.35rem;
             font-weight: 800;
-            color: #0b2545;
+            color: #ffffff;
             letter-spacing: 0.5px;
         }
 
@@ -64,17 +68,22 @@
 
         .nav-links a {
             text-decoration: none;
-            color: #1f2937;
+            color: #93c5fd;
             font-weight: 700;
             font-size: 0.95rem;
+            transition: color 0.3s;
         }
 
-        /* Hero */
+        .nav-links a:hover {
+            color: #38bdf8;
+        }
+
+        /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #0b2545 0%, #134074 100%);
-            color: #ffffff;
-            padding: 4rem 1.5rem;
+            background: linear-gradient(180deg, #0c1e38 0%, #071527 100%);
+            padding: 4.5rem 1.5rem;
             text-align: center;
+            border-bottom: 1px solid #1e3a5f;
         }
 
         .hero-container {
@@ -84,19 +93,19 @@
 
         .hero-badge {
             display: inline-block;
-            background: rgba(255, 255, 255, 0.15);
-            padding: 6px 16px;
+            background: rgba(56, 189, 248, 0.15);
+            padding: 8px 18px;
             border-radius: 20px;
             font-size: 0.85rem;
-            font-weight: 700;
+            font-weight: 800;
             letter-spacing: 1px;
-            margin-bottom: 1.2rem;
-            color: #ffffff;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            margin-bottom: 1.5rem;
+            color: #38bdf8;
+            border: 1px solid #38bdf8;
         }
 
         .hero h1 {
-            font-size: 2.1rem;
+            font-size: 2.2rem;
             font-weight: 800;
             line-height: 1.35;
             margin-bottom: 1.2rem;
@@ -104,28 +113,32 @@
         }
 
         .hero p {
-            font-size: 1.05rem;
-            color: #e2e8f0;
-            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            margin-bottom: 2.2rem;
         }
 
         .btn {
             display: inline-block;
-            background-color: #0077b6;
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
             color: #ffffff;
-            padding: 0.85rem 2rem;
-            border-radius: 6px;
+            padding: 0.9rem 2.2rem;
+            border-radius: 8px;
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 800;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(2, 132, 199, 0.4);
         }
 
         /* Section Layout */
         .section {
-            padding: 3.5rem 1.5rem;
+            padding: 4rem 1.5rem;
         }
 
-        .bg-light {
-            background-color: #f8fafc;
+        .bg-navy {
+            background-color: #0b1c33;
+            border-top: 1px solid #1e3a5f;
+            border-bottom: 1px solid #1e3a5f;
         }
 
         .container {
@@ -135,160 +148,171 @@
 
         .section-title {
             text-align: center;
-            margin-bottom: 2.5rem;
+            margin-bottom: 3rem;
         }
 
         .section-title h2 {
-            font-size: 1.85rem;
-            color: #0b2545;
-            margin-bottom: 0.5rem;
+            font-size: 2rem;
+            color: #ffffff;
+            margin-bottom: 0.6rem;
             font-weight: 800;
         }
 
         .section-title p {
-            color: #4b5563;
+            color: #94a3b8;
             font-size: 1rem;
-            font-weight: 500;
         }
 
-        /* Automotive Cards */
+        /* Automotive Cards (가장 중요한 부분 - 고대비 블루 박스) */
         .auto-card {
-            background: #ffffff;
-            border: 1.5px solid #cbd5e1;
-            border-radius: 10px;
-            padding: 1.5rem;
-            margin-bottom: 1.2rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+            background: #0f2747;
+            border: 2px solid #1d4ed8;
+            border-radius: 12px;
+            padding: 1.8rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
         .auto-card-header {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 800;
-            color: #0b2545;
-            margin-bottom: 0.75rem;
+            color: #60a5fa;
+            margin-bottom: 0.8rem;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
         }
 
         .auto-card-body {
-            color: #1f2937;
-            font-size: 1rem;
-            line-height: 1.6;
-            background-color: #f8fafc;
-            padding: 1rem;
-            border-radius: 6px;
-            border-left: 4px solid #0077b6;
+            color: #ffffff;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            background-color: #16365f;
+            padding: 1.2rem;
+            border-radius: 8px;
+            border-left: 5px solid #38bdf8;
+        }
+
+        .auto-card-body strong {
+            color: #fde047;
+            font-size: 1.05rem;
+            display: inline-block;
+            margin-bottom: 6px;
         }
 
         /* Grid Cards */
         .grid-3 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 1.8rem;
         }
 
         .card {
-            background: #ffffff;
-            padding: 1.8rem;
-            border-radius: 8px;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.03);
+            background: #0f2747;
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid #1e3a5f;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
         .card-icon {
-            font-size: 2rem;
-            margin-bottom: 0.8rem;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
         }
 
         .card h3 {
-            font-size: 1.25rem;
-            color: #0b2545;
-            margin-bottom: 0.75rem;
+            font-size: 1.3rem;
+            color: #38bdf8;
+            margin-bottom: 0.8rem;
             font-weight: 700;
         }
 
         .card p {
-            color: #374151;
-            font-size: 0.95rem;
+            color: #e2e8f0;
+            font-size: 1rem;
+            line-height: 1.6;
         }
 
         /* Target Markets */
         .market-card {
-            background: #ffffff;
-            border-left: 5px solid #0077b6;
-            padding: 1.5rem;
-            margin-bottom: 1.2rem;
-            border-radius: 0 8px 8px 0;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-            border-top: 1px solid #e2e8f0;
-            border-right: 1px solid #e2e8f0;
-            border-bottom: 1px solid #e2e8f0;
+            background: #0f2747;
+            border-left: 6px solid #38bdf8;
+            padding: 1.8rem;
+            margin-bottom: 1.4rem;
+            border-radius: 0 10px 10px 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            border-top: 1px solid #1e3a5f;
+            border-right: 1px solid #1e3a5f;
+            border-bottom: 1px solid #1e3a5f;
         }
 
         .market-card h3 {
-            color: #0b2545;
-            margin-bottom: 0.6rem;
-            font-size: 1.2rem;
+            color: #ffffff;
+            margin-bottom: 0.8rem;
+            font-size: 1.25rem;
             font-weight: 700;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             flex-wrap: wrap;
         }
 
         .badge {
-            background: #0b2545;
+            background: #0284c7;
             color: #ffffff;
-            font-size: 0.75rem;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-weight: 700;
+            font-size: 0.8rem;
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-weight: 800;
+            text-transform: uppercase;
         }
 
         .market-card p {
-            color: #374151;
-            font-size: 0.95rem;
+            color: #cbd5e1;
+            font-size: 1rem;
+            line-height: 1.6;
         }
 
         /* Process Steps */
         .process-steps {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.2rem;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 1.5rem;
         }
 
         .step {
-            background: #f8fafc;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border: 1px solid #e2e8f0;
+            background: #0f2747;
+            padding: 1.8rem;
+            border-radius: 10px;
+            border: 1px solid #1e3a5f;
         }
 
         .step-num {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: #0077b6;
-            margin-bottom: 0.4rem;
+            font-size: 2rem;
+            font-weight: 900;
+            color: #38bdf8;
+            margin-bottom: 0.5rem;
         }
 
         .step h4 {
-            color: #0b2545;
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
+            color: #ffffff;
+            font-size: 1.15rem;
+            margin-bottom: 0.6rem;
             font-weight: 700;
         }
 
         .step p {
-            font-size: 0.9rem;
-            color: #4b5563;
+            font-size: 0.95rem;
+            color: #94a3b8;
+            line-height: 1.5;
         }
 
         /* Footer */
         footer {
-            background-color: #0b2545;
+            background-color: #050e1a;
             color: #ffffff;
-            padding: 3rem 1.5rem 1.5rem;
+            padding: 3.5rem 1.5rem 1.5rem;
+            border-top: 1px solid #1e3a5f;
         }
 
         .footer-container {
@@ -299,19 +323,19 @@
             justify-content: space-between;
             gap: 2rem;
             padding-bottom: 2rem;
-            border-bottom: 1px solid rgba(255,255,255,0.15);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
         .footer-info h3 {
-            font-size: 1.3rem;
+            font-size: 1.35rem;
             margin-bottom: 0.8rem;
-            color: #ffffff;
+            color: #38bdf8;
         }
 
         .footer-info p {
             color: #cbd5e1;
-            font-size: 0.92rem;
-            margin-bottom: 0.4rem;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
         }
 
         .footer-info strong {
@@ -321,17 +345,20 @@
         .copyright {
             text-align: center;
             padding-top: 1.5rem;
-            color: #94a3b8;
+            color: #64748b;
             font-size: 0.85rem;
         }
 
         @media (max-width: 768px) {
             .nav-container {
                 flex-direction: column;
-                gap: 0.8rem;
+                gap: 1rem;
             }
             .hero h1 {
-                font-size: 1.75rem;
+                font-size: 1.8rem;
+            }
+            .auto-card {
+                padding: 1.3rem;
             }
         }
     </style>
@@ -347,8 +374,8 @@
             </a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
-                <li><a href="#automotive">Automotive Electronics</a></li>
-                <li><a href="#markets">Target Markets</a></li>
+                <li><a href="#automotive">Automotive</a></li>
+                <li><a href="#markets">Markets</a></li>
                 <li><a href="#process">Process</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -366,7 +393,7 @@
     </section>
 
     <!-- Strategic Business Pillars -->
-    <section class="section bg-light" id="about">
+    <section class="section bg-navy" id="about">
         <div class="container">
             <div class="section-title">
                 <h2>Strategic Business Pillars</h2>
@@ -392,7 +419,7 @@
         </div>
     </section>
 
-    <!-- Core Focus: Automotive Electronics Portfolio (Mobile-Optimized Cards) -->
+    <!-- Core Focus: Automotive Electronics Portfolio -->
     <section class="section" id="automotive">
         <div class="container">
             <div class="section-title">
@@ -437,7 +464,7 @@
     </section>
 
     <!-- Target Markets & Extended Portfolio -->
-    <section class="section bg-light" id="markets">
+    <section class="section bg-navy" id="markets">
         <div class="container">
             <div class="section-title">
                 <h2>Target Markets & Extended Portfolio</h2>
@@ -454,8 +481,8 @@
                 <p>Building specialized distribution and import channels for automotive assemblies and medical/industrial diagnostic systems in Chile, Brazil, Colombia, and Mexico.</p>
             </div>
 
-            <div class="market-card" style="border-left-color: #134074;">
-                <h3><span class="badge" style="background:#134074;">Extended Scope</span> Medical & Precision Industrial Sourcing</h3>
+            <div class="market-card" style="border-left-color: #38bdf8;">
+                <h3><span class="badge" style="background:#1d4ed8;">Extended Scope</span> Medical & Precision Industrial Sourcing</h3>
                 <p>Advanced medical diagnostic devices, breath analysis systems, certified consumables, and precision-machined industrial engineering components.</p>
             </div>
         </div>
