@@ -561,13 +561,17 @@
     </div>
     <div class="form reveal">
       <p class="note">We typically respond within two business days. If you already have drawings, datasheets, or a preferred manufacturer list, mention it so we can respond precisely.</p>
-      <div class="field"><label>Name</label><input type="text" placeholder="Full name" /></div>
-      <div class="field"><label>Work email</label><input type="email" placeholder="name@company.com" /></div>
-      <div class="field"><label>Target market</label>
-        <select><option>Middle East (GCC)</option><option>Latin America (LATAM)</option><option>East Asia</option><option>Other / multiple</option></select>
-      </div>
-      <div class="field"><label>Your requirement</label><textarea placeholder="Briefly describe your components, quantities, timelines, and what you're exploring."></textarea></div>
-      <button class="btn-primary" onclick="alert('Thank you. Please also reach us at trade@tronexengineering.co.kr — this demo form does not submit.')">Send message →</button>
+      <form id="contactForm" action="https://formspree.io/f/mrpzlnla" method="POST">
+        <div class="field"><label>Name</label><input type="text" name="name" placeholder="Full name" required /></div>
+        <div class="field"><label>Work email</label><input type="email" name="email" placeholder="name@company.com" required /></div>
+        <div class="field"><label>Target market</label>
+          <select name="target_market"><option>Middle East (GCC)</option><option>Latin America (LATAM)</option><option>East Asia</option><option>Other / multiple</option></select>
+        </div>
+        <div class="field"><label>Your requirement</label><textarea name="message" placeholder="Briefly describe your components, quantities, timelines, and what you're exploring." required></textarea></div>
+        <input type="hidden" name="_subject" value="New inquiry — Tronex Engineering" />
+        <button type="submit" class="btn-primary">Send message →</button>
+        <p id="formStatus" style="display:none;font-family:'IBM Plex Mono';font-size:.82rem;margin-top:14px;"></p>
+      </form>
     </div>
   </div>
 </section>
@@ -590,6 +594,39 @@
     es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
   },{threshold:.12});
   document.querySelectorAll('.reveal').forEach((el,i)=>{ el.style.transitionDelay=(i%4*60)+'ms'; io.observe(el); });
+
+  // Contact form → Formspree (AJAX, no page redirect)
+  const cf = document.getElementById('contactForm');
+  const st = document.getElementById('formStatus');
+  if(cf){
+    cf.addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      const btn = cf.querySelector('button[type=submit]');
+      const original = btn.textContent;
+      btn.textContent = 'Sending…'; btn.disabled = true;
+      st.style.display='none';
+      try{
+        const res = await fetch(cf.action, {
+          method:'POST',
+          body:new FormData(cf),
+          headers:{'Accept':'application/json'}
+        });
+        if(res.ok){
+          cf.reset();
+          st.textContent='✓ Thank you — your message has been sent. We\'ll respond within two business days.';
+          st.style.color='#7BC47F';
+        }else{
+          st.textContent='Something went wrong. Please email trade@tronexengineering.co.kr directly.';
+          st.style.color='#E8963A';
+        }
+      }catch(err){
+        st.textContent='Network error. Please email trade@tronexengineering.co.kr directly.';
+        st.style.color='#E8963A';
+      }
+      st.style.display='block';
+      btn.textContent=original; btn.disabled=false;
+    });
+  }
 </script>
 </body>
 </html>
