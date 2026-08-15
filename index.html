@@ -1,539 +1,595 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TRONEX ENGINEERING - Automotive Electronics & Global Trade Partner</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            -webkit-text-size-adjust: 100%;
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tronex Engineering — Automotive Electronics & Technical Sourcing for GCC & LATAM</title>
+<meta name="description" content="Korea-based technical trade partner connecting world-class Asian manufacturing to Middle East (GCC) and Latin American markets. Automotive electronics, EV powertrain, and diagnostic medical sourcing under IATF 16949 & AEC-Q standards." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0B1F3A;
+    --navy-2:#122a4d;
+    --steel:#2B7FB8;
+    --steel-lt:#4FA3D9;
+    --amber:#E8963A;
+    --paper:#F5F7FA;
+    --paper-2:#EBEFF5;
+    --ink:#1A2433;
+    --ink-soft:#4A5568;
+    --line:#D7DEE8;
+    --line-dk:rgba(255,255,255,.14);
+    --white:#ffffff;
+    --maxw:1180px;
+    --r:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'IBM Plex Sans',system-ui,sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;line-height:1.1;letter-spacing:-.02em;font-weight:600;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  a{color:inherit;text-decoration:none;}
 
-        body {
-            background-color: #071527;
-            color: #f1f5f9;
-            line-height: 1.6;
-        }
+  /* eyebrow / labels */
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
+    font-weight:500;color:var(--steel);
+    display:inline-flex;align-items:center;gap:9px;
+  }
+  .eyebrow::before{content:"";width:22px;height:1px;background:var(--steel);display:inline-block;}
+  .eyebrow.on-dark{color:var(--steel-lt);}
+  .eyebrow.on-dark::before{background:var(--steel-lt);}
 
-        /* Header & Navigation */
-        header {
-            background-color: #0c1e38;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid #1e3a5f;
-        }
+  /* ===== NAV ===== */
+  header.nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(11,31,58,.92);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line-dk);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:70px;}
+  .brand{display:flex;align-items:center;gap:12px;color:#fff;}
+  .brand .mark{
+    width:34px;height:34px;border:1.5px solid var(--steel-lt);border-radius:7px;
+    display:grid;place-items:center;position:relative;flex:none;
+  }
+  .brand .mark::before{content:"";width:14px;height:14px;border:1.5px solid var(--amber);border-radius:2px;transform:rotate(45deg);}
+  .brand-txt b{font-family:'Space Grotesk';font-size:1.02rem;letter-spacing:.04em;display:block;line-height:1.1;}
+  .brand-txt span{font-family:'IBM Plex Mono';font-size:.6rem;letter-spacing:.24em;color:var(--steel-lt);text-transform:uppercase;}
+  .nav-links{display:flex;gap:30px;align-items:center;}
+  .nav-links a{color:#cdd8e6;font-size:.9rem;font-weight:500;transition:color .2s;}
+  .nav-links a:hover{color:#fff;}
+  .nav-cta{
+    background:var(--steel);color:#fff;padding:10px 18px;border-radius:9px;
+    font-weight:600;font-size:.87rem;transition:background .2s,transform .2s;
+    border:1px solid var(--steel-lt);
+  }
+  .nav-cta:hover{background:var(--steel-lt);transform:translateY(-1px);}
+  .burger{display:none;background:none;border:none;color:#fff;cursor:pointer;}
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;background:var(--navy);color:#fff;overflow:hidden;
+    padding:92px 0 0;
+  }
+  .hero-grid-bg{
+    position:absolute;inset:0;
+    background-image:linear-gradient(rgba(79,163,217,.06) 1px,transparent 1px),
+                     linear-gradient(90deg,rgba(79,163,217,.06) 1px,transparent 1px);
+    background-size:44px 44px;
+    mask-image:radial-gradient(ellipse 90% 70% at 60% 20%,#000 40%,transparent 100%);
+  }
+  .hero-in{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;}
+  .hero h1{
+    font-size:clamp(2.4rem,4.6vw,3.65rem);font-weight:700;margin:22px 0 20px;
+  }
+  .hero h1 .hl{color:var(--steel-lt);}
+  .hero h1 .amb{color:var(--amber);}
+  .hero p.lead{
+    font-size:1.12rem;color:#c3cede;max-width:540px;margin-bottom:34px;line-height:1.65;
+  }
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:44px;}
+  .btn-primary{
+    background:var(--amber);color:#1a1200;padding:14px 26px;border-radius:10px;
+    font-weight:600;font-size:.95rem;transition:transform .2s,box-shadow .2s;
+    box-shadow:0 8px 24px rgba(232,150,58,.24);display:inline-flex;align-items:center;gap:9px;
+  }
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(232,150,58,.34);}
+  .btn-ghost{
+    background:transparent;color:#fff;padding:14px 26px;border-radius:10px;
+    border:1px solid rgba(255,255,255,.24);font-weight:600;font-size:.95rem;transition:.2s;
+    display:inline-flex;align-items:center;gap:9px;
+  }
+  .btn-ghost:hover{border-color:var(--steel-lt);background:rgba(79,163,217,.1);}
+  .hero-stats{display:flex;gap:34px;border-top:1px solid var(--line-dk);padding-top:26px;flex-wrap:wrap;}
+  .hero-stats .st b{font-family:'Space Grotesk';font-size:1.7rem;font-weight:700;color:#fff;display:block;}
+  .hero-stats .st span{font-family:'IBM Plex Mono';font-size:.7rem;letter-spacing:.12em;color:#8fa3bd;text-transform:uppercase;}
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-        }
+  /* corridor diagram (signature) */
+  .corridor{
+    position:relative;background:rgba(255,255,255,.03);border:1px solid var(--line-dk);
+    border-radius:16px;padding:22px 22px 26px;backdrop-filter:blur(2px);
+  }
+  .corridor .c-hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;}
+  .corridor .c-hd span{font-family:'IBM Plex Mono';font-size:.66rem;letter-spacing:.16em;color:var(--steel-lt);text-transform:uppercase;}
+  .corridor .c-hd .dot{width:8px;height:8px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 4px rgba(232,150,58,.18);}
+  .route{display:flex;flex-direction:column;gap:2px;}
+  .node{
+    display:flex;align-items:center;gap:14px;padding:13px 15px;border-radius:10px;
+    background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);
+  }
+  .node .idx{font-family:'IBM Plex Mono';font-size:.7rem;color:var(--amber);width:26px;flex:none;}
+  .node .nm{font-family:'Space Grotesk';font-weight:600;font-size:.98rem;flex:1;}
+  .node .tg{font-family:'IBM Plex Mono';font-size:.63rem;letter-spacing:.1em;color:#8fa3bd;text-transform:uppercase;}
+  .node.origin{background:rgba(43,127,184,.14);border-color:rgba(79,163,217,.3);}
+  .connector{height:22px;position:relative;margin-left:26px;}
+  .connector::before{content:"";position:absolute;left:12px;top:0;bottom:0;width:2px;
+    background:linear-gradient(var(--steel-lt),rgba(79,163,217,.15));}
+  .flow-dot{position:absolute;left:8px;width:10px;height:10px;border-radius:50%;background:var(--steel-lt);
+    box-shadow:0 0 10px var(--steel-lt);animation:flow 2.6s linear infinite;}
+  @keyframes flow{0%{top:-4px;opacity:0}15%{opacity:1}85%{opacity:1}100%{top:20px;opacity:0}}
 
-        .logo img {
-            height: 44px;
-            width: auto;
-            border-radius: 4px;
-            background: #ffffff;
-            padding: 2px 6px;
-        }
+  /* ===== SECTION BASE ===== */
+  section{padding:86px 0;}
+  .sec-head{max-width:680px;margin-bottom:52px;}
+  .sec-head h2{font-size:clamp(1.85rem,3.4vw,2.6rem);margin:16px 0 14px;color:var(--navy);}
+  .sec-head p{color:var(--ink-soft);font-size:1.06rem;}
 
-        .logo-text {
-            font-size: 1.35rem;
-            font-weight: 800;
-            color: #ffffff;
-            letter-spacing: 0.5px;
-        }
+  /* pillars */
+  .pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .pillar{
+    background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:26px 24px;
+    transition:transform .25s,box-shadow .25s,border-color .25s;position:relative;overflow:hidden;
+  }
+  .pillar::after{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:var(--steel);
+    transform:scaleX(0);transform-origin:left;transition:transform .3s;}
+  .pillar:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(11,31,58,.1);border-color:var(--steel);}
+  .pillar:hover::after{transform:scaleX(1);}
+  .pillar .ic{width:44px;height:44px;border-radius:10px;background:var(--paper-2);display:grid;place-items:center;margin-bottom:18px;color:var(--steel);}
+  .pillar .ic svg{width:22px;height:22px;}
+  .pillar h3{font-size:1.12rem;margin-bottom:10px;color:var(--navy);}
+  .pillar p{font-size:.92rem;color:var(--ink-soft);}
+  .pillar .pnum{position:absolute;top:20px;right:22px;font-family:'IBM Plex Mono';font-size:.72rem;color:var(--line);}
 
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-            list-style: none;
-        }
+  /* portfolio / datasheet table */
+  .portfolio{background:var(--navy);color:#fff;}
+  .portfolio .sec-head h2{color:#fff;}
+  .portfolio .sec-head p{color:#a9b8cd;}
+  .ds{border:1px solid var(--line-dk);border-radius:16px;overflow:hidden;background:rgba(255,255,255,.02);}
+  .ds-row{display:grid;grid-template-columns:.9fr 2.4fr .8fr;gap:24px;padding:26px 28px;border-bottom:1px solid var(--line-dk);align-items:start;}
+  .ds-row:last-child{border-bottom:none;}
+  .ds-row:hover{background:rgba(79,163,217,.06);}
+  .ds-head{background:rgba(255,255,255,.04);}
+  .ds-head .k{font-family:'IBM Plex Mono';font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--steel-lt);}
+  .ds-sector{font-family:'Space Grotesk';font-weight:600;font-size:1.08rem;color:#fff;}
+  .ds-sector small{display:block;font-family:'IBM Plex Mono';font-size:.66rem;color:var(--amber);margin-top:6px;letter-spacing:.08em;}
+  .ds-scope{color:#c3cede;font-size:.95rem;}
+  .ds-scope b{color:#fff;font-weight:600;}
+  .ds-std{font-family:'IBM Plex Mono';font-size:.72rem;color:#8fa3bd;text-align:right;line-height:1.9;}
+  .ds-std span{display:inline-block;border:1px solid var(--line-dk);border-radius:6px;padding:3px 8px;color:#c3cede;}
 
-        .nav-links a {
-            text-decoration: none;
-            color: #93c5fd;
-            font-weight: 700;
-            font-size: 0.95rem;
-            transition: color 0.3s;
-        }
+  /* markets */
+  .markets{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .mkt{
+    background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:0;overflow:hidden;
+    transition:transform .25s,box-shadow .25s;
+  }
+  .mkt:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(11,31,58,.1);}
+  .mkt .mkt-top{padding:24px 26px 20px;border-left:4px solid var(--steel);}
+  .mkt.latam .mkt-top{border-left-color:var(--amber);}
+  .mkt.ext .mkt-top{border-left-color:var(--navy);}
+  .mkt .rgn{font-family:'IBM Plex Mono';font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--steel);font-weight:600;}
+  .mkt.latam .rgn{color:var(--amber);}
+  .mkt.ext .rgn{color:var(--navy);}
+  .mkt h3{font-size:1.2rem;margin:8px 0 12px;color:var(--navy);}
+  .mkt p{font-size:.93rem;color:var(--ink-soft);padding:0 26px 4px;}
+  .mkt .tags{display:flex;flex-wrap:wrap;gap:7px;padding:16px 26px 24px;}
+  .mkt .tags span{font-family:'IBM Plex Mono';font-size:.68rem;background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:5px 11px;color:var(--ink-soft);}
 
-        .nav-links a:hover {
-            color: #38bdf8;
-        }
+  /* capability strip */
+  .cap{background:var(--paper-2);}
+  .cap-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+  .cap-list{display:flex;flex-direction:column;gap:4px;margin-top:26px;}
+  .cap-item{display:flex;gap:18px;padding:20px 0;border-bottom:1px solid var(--line);}
+  .cap-item:last-child{border-bottom:none;}
+  .cap-item .cn{font-family:'IBM Plex Mono';font-size:.8rem;color:var(--steel);font-weight:600;flex:none;width:34px;}
+  .cap-item h4{font-size:1.05rem;color:var(--navy);margin-bottom:5px;}
+  .cap-item p{font-size:.92rem;color:var(--ink-soft);}
+  .cap-panel{
+    background:var(--navy);border-radius:18px;padding:34px;color:#fff;position:relative;overflow:hidden;
+  }
+  .cap-panel .glow{position:absolute;top:-40%;right:-20%;width:320px;height:320px;border-radius:50%;
+    background:radial-gradient(circle,rgba(43,127,184,.4),transparent 70%);}
+  .cap-panel h3{font-size:1.4rem;margin-bottom:8px;position:relative;}
+  .cap-panel .sub{color:#a9b8cd;font-size:.95rem;margin-bottom:26px;position:relative;}
+  .metrics{display:grid;grid-template-columns:1fr 1fr;gap:2px;position:relative;border:1px solid var(--line-dk);border-radius:12px;overflow:hidden;}
+  .metric{padding:20px;background:rgba(255,255,255,.03);min-width:0;}
+  .metric b{font-family:'Space Grotesk';font-size:clamp(1.3rem,4.4vw,1.7rem);font-weight:700;display:block;color:var(--steel-lt);line-height:1.15;word-break:break-word;}
+  .metric span{font-family:'IBM Plex Mono';font-size:.66rem;letter-spacing:.08em;color:#8fa3bd;text-transform:uppercase;display:block;margin-top:6px;}
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(180deg, #0c1e38 0%, #071527 100%);
-            padding: 4.5rem 1.5rem;
-            text-align: center;
-            border-bottom: 1px solid #1e3a5f;
-        }
+  /* process */
+  .proc{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff;}
+  .step{padding:30px 26px;border-right:1px solid var(--line);position:relative;transition:background .25s;}
+  .step:last-child{border-right:none;}
+  .step:hover{background:var(--paper);}
+  .step .sn{font-family:'IBM Plex Mono';font-size:.78rem;color:var(--amber);font-weight:600;letter-spacing:.1em;}
+  .step .bar{height:3px;background:var(--line);margin:14px 0 20px;position:relative;}
+  .step .bar::before{content:"";position:absolute;left:0;top:0;height:100%;width:0;background:var(--steel);transition:width .4s;}
+  .step:hover .bar::before{width:100%;}
+  .step h4{font-size:1.08rem;color:var(--navy);margin-bottom:9px;}
+  .step p{font-size:.9rem;color:var(--ink-soft);}
 
-        .hero-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
+  /* CTA / contact */
+  .contact{background:var(--navy);color:#fff;position:relative;overflow:hidden;}
+  .contact .hero-grid-bg{mask-image:radial-gradient(ellipse 80% 80% at 30% 40%,#000 30%,transparent 100%);}
+  .contact-in{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+  .contact h2{font-size:clamp(1.9rem,3.4vw,2.6rem);color:#fff;margin:16px 0 16px;}
+  .contact .lead{color:#bccbe0;font-size:1.05rem;max-width:460px;margin-bottom:30px;}
+  .contact-meta{margin-top:30px;display:flex;flex-direction:column;gap:22px;}
+  .cm .k{font-family:'IBM Plex Mono';font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--steel-lt);margin-bottom:5px;}
+  .cm .v{color:#dbe4f0;font-size:.98rem;}
+  .form{background:rgba(255,255,255,.04);border:1px solid var(--line-dk);border-radius:18px;padding:32px;}
+  .form .note{font-size:.88rem;color:#a9b8cd;margin-bottom:22px;}
+  .field{margin-bottom:16px;}
+  .field label{font-family:'IBM Plex Mono';font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:#8fa3bd;display:block;margin-bottom:7px;}
+  .field input,.field textarea,.field select{
+    width:100%;background:rgba(255,255,255,.05);border:1px solid var(--line-dk);border-radius:10px;
+    padding:12px 14px;color:#fff;font-family:'IBM Plex Sans';font-size:.95rem;transition:border-color .2s,background .2s;
+  }
+  .field input::placeholder,.field textarea::placeholder{color:#6b7d96;}
+  .field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--steel-lt);background:rgba(79,163,217,.08);}
+  .field textarea{resize:vertical;min-height:96px;}
+  .form .btn-primary{width:100%;justify-content:center;border:none;cursor:pointer;margin-top:6px;}
 
-        .hero-badge {
-            display: inline-block;
-            background: rgba(56, 189, 248, 0.15);
-            padding: 8px 18px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 800;
-            letter-spacing: 1px;
-            margin-bottom: 1.5rem;
-            color: #38bdf8;
-            border: 1px solid #38bdf8;
-        }
+  /* footer */
+  footer.ft{background:#071528;color:#8fa3bd;padding:40px 0;border-top:1px solid var(--line-dk);}
+  .ft-in{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px;}
+  .ft-in .cp{font-family:'IBM Plex Mono';font-size:.76rem;}
+  .ft-links{display:flex;gap:26px;}
+  .ft-links a{font-size:.85rem;transition:color .2s;}
+  .ft-links a:hover{color:#fff;}
 
-        .hero h1 {
-            font-size: 2.2rem;
-            font-weight: 800;
-            line-height: 1.35;
-            margin-bottom: 1.2rem;
-            color: #ffffff;
-        }
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
+  .reveal.in{opacity:1;transform:none;}
 
-        .hero p {
-            font-size: 1.1rem;
-            color: #cbd5e1;
-            margin-bottom: 2.2rem;
-        }
-
-        .btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
-            color: #ffffff;
-            padding: 0.9rem 2.2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 1rem;
-            box-shadow: 0 4px 15px rgba(2, 132, 199, 0.4);
-        }
-
-        /* Section Layout */
-        .section {
-            padding: 4rem 1.5rem;
-        }
-
-        .bg-navy {
-            background-color: #0b1c33;
-            border-top: 1px solid #1e3a5f;
-            border-bottom: 1px solid #1e3a5f;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-title h2 {
-            font-size: 2rem;
-            color: #ffffff;
-            margin-bottom: 0.6rem;
-            font-weight: 800;
-        }
-
-        .section-title p {
-            color: #94a3b8;
-            font-size: 1rem;
-        }
-
-        /* Automotive Cards (가장 중요한 부분 - 고대비 블루 박스) */
-        .auto-card {
-            background: #0f2747;
-            border: 2px solid #1d4ed8;
-            border-radius: 12px;
-            padding: 1.8rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .auto-card-header {
-            font-size: 1.3rem;
-            font-weight: 800;
-            color: #60a5fa;
-            margin-bottom: 0.8rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .auto-card-body {
-            color: #ffffff;
-            font-size: 1.05rem;
-            line-height: 1.7;
-            background-color: #16365f;
-            padding: 1.2rem;
-            border-radius: 8px;
-            border-left: 5px solid #38bdf8;
-        }
-
-        .auto-card-body strong {
-            color: #fde047;
-            font-size: 1.05rem;
-            display: inline-block;
-            margin-bottom: 6px;
-        }
-
-        /* Grid Cards */
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-            gap: 1.8rem;
-        }
-
-        .card {
-            background: #0f2747;
-            padding: 2rem;
-            border-radius: 10px;
-            border: 1px solid #1e3a5f;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-
-        .card-icon {
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
-        }
-
-        .card h3 {
-            font-size: 1.3rem;
-            color: #38bdf8;
-            margin-bottom: 0.8rem;
-            font-weight: 700;
-        }
-
-        .card p {
-            color: #e2e8f0;
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        /* Target Markets */
-        .market-card {
-            background: #0f2747;
-            border-left: 6px solid #38bdf8;
-            padding: 1.8rem;
-            margin-bottom: 1.4rem;
-            border-radius: 0 10px 10px 0;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            border-top: 1px solid #1e3a5f;
-            border-right: 1px solid #1e3a5f;
-            border-bottom: 1px solid #1e3a5f;
-        }
-
-        .market-card h3 {
-            color: #ffffff;
-            margin-bottom: 0.8rem;
-            font-size: 1.25rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
-        .badge {
-            background: #0284c7;
-            color: #ffffff;
-            font-size: 0.8rem;
-            padding: 5px 10px;
-            border-radius: 6px;
-            font-weight: 800;
-            text-transform: uppercase;
-        }
-
-        .market-card p {
-            color: #cbd5e1;
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        /* Process Steps */
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .step {
-            background: #0f2747;
-            padding: 1.8rem;
-            border-radius: 10px;
-            border: 1px solid #1e3a5f;
-        }
-
-        .step-num {
-            font-size: 2rem;
-            font-weight: 900;
-            color: #38bdf8;
-            margin-bottom: 0.5rem;
-        }
-
-        .step h4 {
-            color: #ffffff;
-            font-size: 1.15rem;
-            margin-bottom: 0.6rem;
-            font-weight: 700;
-        }
-
-        .step p {
-            font-size: 0.95rem;
-            color: #94a3b8;
-            line-height: 1.5;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #050e1a;
-            color: #ffffff;
-            padding: 3.5rem 1.5rem 1.5rem;
-            border-top: 1px solid #1e3a5f;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 2rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .footer-info h3 {
-            font-size: 1.35rem;
-            margin-bottom: 0.8rem;
-            color: #38bdf8;
-        }
-
-        .footer-info p {
-            color: #cbd5e1;
-            font-size: 0.95rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-info strong {
-            color: #ffffff;
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 1.5rem;
-            color: #64748b;
-            font-size: 0.85rem;
-        }
-
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-            .auto-card {
-                padding: 1.3rem;
-            }
-        }
-    </style>
+  /* ===== RESPONSIVE ===== */
+  @media(max-width:960px){
+    .hero-in,.cap-grid,.contact-in{grid-template-columns:1fr;gap:40px;}
+    .pillars{grid-template-columns:1fr 1fr;}
+    .markets{grid-template-columns:1fr;}
+    .proc{grid-template-columns:1fr 1fr;}
+    .step:nth-child(2n){border-right:none;}
+    .step{border-bottom:1px solid var(--line);}
+    .nav-links{display:none;}
+    .nav-cta{display:none;}
+    .burger{display:block;}
+    .ds-row{grid-template-columns:1fr;gap:12px;}
+    .ds-std{text-align:left;}
+    .ds-head{display:none;}
+  }
+  @media(max-width:560px){
+    .pillars{grid-template-columns:1fr;}
+    .proc{grid-template-columns:1fr;}
+    .step{border-right:none;}
+    .hero-stats{gap:22px;}
+    section{padding:60px 0;}
+    .cap-panel{padding:26px 22px;}
+    .metrics{grid-template-columns:1fr;}
+    .metric b{font-size:1.5rem;}
+    .metric{padding:18px;}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;}
+    .reveal{opacity:1;transform:none;}
+  }
+</style>
 </head>
 <body>
 
-    <!-- Header / Navigation -->
-    <header>
-        <div class="nav-container">
-            <a href="#" class="logo">
-                <img src="logo.png" alt="TRONEX ENGINEERING Logo" onerror="this.style.display='none'">
-                <span class="logo-text">TRONEX ENGINEERING</span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#automotive">Automotive</a></li>
-                <li><a href="#markets">Markets</a></li>
-                <li><a href="#process">Process</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top">
+      <span class="mark"></span>
+      <span class="brand-txt"><b>TRONEX ENGINEERING</b><span>Global Technical Trade</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#pillars">Capabilities</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#markets">Markets</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="nav-cta">Talk to an expert →</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-grid-bg"></div>
+  <div class="wrap hero-in">
+    <div>
+      <span class="eyebrow on-dark">Korea → GCC · LATAM · East Asia</span>
+      <h1>Automotive electronics, engineered for <span class="hl">emerging global markets</span>.</h1>
+      <p class="lead">Tronex Engineering is a Korea-based technical trade partner that connects world-class Asian manufacturing infrastructure to the Middle East and Latin America — with the engineering literacy to qualify components, not just move boxes.</p>
+      <div class="hero-cta">
+        <a href="#portfolio" class="btn-ghost">View portfolio</a>
+      </div>
+      <div class="hero-stats">
+        <div class="st"><b>IATF&nbsp;16949</b><span>Quality baseline</span></div>
+        <div class="st"><b>GCC + LATAM</b><span>Target corridors</span></div>
+        <div class="st"><b>End-to-end</b><span>Sourcing to channel</span></div>
+      </div>
+    </div>
+
+    <!-- signature corridor diagram -->
+    <div class="corridor reveal">
+      <div class="c-hd">
+        <span>Trade Corridor · Live</span>
+        <span class="dot"></span>
+      </div>
+      <div class="route">
+        <div class="node origin">
+          <span class="idx">SRC</span>
+          <span class="nm">Korean & Asian Manufacturing</span>
+          <span class="tg">IATF 16949</span>
         </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-container">
-            <span class="hero-badge">AUTOMOTIVE ELECTRONICS & GLOBAL SOURCING PARTNER</span>
-            <h1>Driving Automotive Electronics & Advanced Tech to Middle East & LATAM Markets</h1>
-            <p>Your Trusted Strategic Partner Specializing in Automotive Electronics, Diagnostic Medical Devices, and Industrial Technology Sourcing.</p>
-            <a href="#contact" class="btn">Contact Us</a>
+        <div class="connector"><span class="flow-dot"></span></div>
+        <div class="node">
+          <span class="idx">QC</span>
+          <span class="nm">Audit · Qualification · Compliance</span>
+          <span class="tg">AEC-Q</span>
         </div>
-    </section>
-
-    <!-- Strategic Business Pillars -->
-    <section class="section bg-navy" id="about">
-        <div class="container">
-            <div class="section-title">
-                <h2>Strategic Business Pillars</h2>
-                <p>Connecting World-Class Korean & Asian Manufacturing Infrastructure with High-Growth Markets</p>
-            </div>
-            <div class="grid-3">
-                <div class="card">
-                    <div class="card-icon">⚡</div>
-                    <h3>Automotive Electronics Sourcing</h3>
-                    <p>Supplying highly reliable automotive electronics, PCB/PCBA, ECU units, sensors, and EV power modules manufactured in South Korea under strict IATF 16949 / AEC-Q standards.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">🌍</div>
-                    <h3>Middle East & LATAM Expertise</h3>
-                    <p>Deep structural understanding of regional import regulations, local certification processes (SASO, ANVISA, etc.), tariff mappings, and business customs across GCC and Latin America.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">🔗</div>
-                    <h3>End-to-End International SCM</h3>
-                    <p>Full-spectrum trade management including supplier auditing, quality inspection, regulatory approval, international logistics, and local B2B channel development.</p>
-                </div>
-            </div>
+        <div class="connector"><span class="flow-dot" style="animation-delay:.9s"></span></div>
+        <div class="node">
+          <span class="idx">GCC</span>
+          <span class="nm">Middle East Distribution</span>
+          <span class="tg">SASO</span>
         </div>
-    </section>
-
-    <!-- Core Focus: Automotive Electronics Portfolio -->
-    <section class="section" id="automotive">
-        <div class="container">
-            <div class="section-title">
-                <h2>Automotive Electronics Portfolio</h2>
-                <p>Tailored Solutions Built for Technical Domain Excellence and Global Compliance</p>
-            </div>
-
-            <!-- Card 1 -->
-            <div class="auto-card">
-                <div class="auto-card-header">
-                    🚗 Automotive Control Units & Electronics
-                </div>
-                <div class="auto-card-body">
-                    <strong>Key Sourcing & Supply Scope:</strong><br>
-                    Electronic Control Units (ECU), Automotive Sensors, High-Reliability Vehicle PCBs/PCBA, Smart Key Systems, and Body Control Modules (BCM).
-                </div>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="auto-card">
-                <div class="auto-card-header">
-                    🔋 EV & Powertrain Solutions
-                </div>
-                <div class="auto-card-body">
-                    <strong>Key Sourcing & Supply Scope:</strong><br>
-                    Electric Vehicle (EV) Powertrain Components, Battery Management Systems (BMS), On-Board Chargers (OBC), and High-Voltage Power Inverters.
-                </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="auto-card">
-                <div class="auto-card-header">
-                    📡 In-Vehicle Display & Telematics
-                </div>
-                <div class="auto-card-body">
-                    <strong>Key Sourcing & Supply Scope:</strong><br>
-                    Automotive Display Panels, ADAS Camera & Sensing Modules, Telematics Control Units (TCU), and In-Vehicle Networking Components.
-                </div>
-            </div>
-
+        <div class="connector"><span class="flow-dot" style="animation-delay:1.7s"></span></div>
+        <div class="node">
+          <span class="idx">LAT</span>
+          <span class="nm">Latin America Distribution</span>
+          <span class="tg">ANVISA</span>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Target Markets & Extended Portfolio -->
-    <section class="section bg-navy" id="markets">
-        <div class="container">
-            <div class="section-title">
-                <h2>Target Markets & Extended Portfolio</h2>
-                <p>Specialized Trade Corridors Connecting High-Growth Frontier Regions</p>
-            </div>
-            
-            <div class="market-card">
-                <h3><span class="badge">Middle East</span> GCC Region Market</h3>
-                <p>Targeting Tier-1/Tier-2 automotive suppliers, aftermarket distributors, and industrial equipment importers across Saudi Arabia, UAE, Qatar, and Kuwait.</p>
-            </div>
+<!-- PILLARS -->
+<section id="pillars">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">What we do</span>
+      <h2>Strategic capabilities across the full trade chain</h2>
+      <p>We combine trading execution with engineering discipline — matching specifications, qualifying suppliers, and clearing regulatory pathways so your teams stay focused on product.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar reveal">
+        <span class="pnum mono">01</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg></div>
+        <h3>Automotive Electronics</h3>
+        <p>ECUs, automotive sensors, high-reliability PCB/PCBA, and EV power modules built under strict IATF 16949 and AEC-Q qualification.</p>
+      </div>
+      <div class="pillar reveal">
+        <span class="pnum mono">02</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 3 2.5 15 0 18M12 3c-2.5 3-2.5 15 0 18"/></svg></div>
+        <h3>Middle East & LATAM Expertise</h3>
+        <p>Structural understanding of import regulations, local certifications (SASO, ANVISA), and B2B customs across the GCC and Latin America.</p>
+      </div>
+      <div class="pillar reveal">
+        <span class="pnum mono">03</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 15 15 9M8 12l-3 3a3.5 3.5 0 0 0 5 5l3-3M16 12l3-3a3.5 3.5 0 0 0-5-5l-3 3"/></svg></div>
+        <h3>End-to-End Trade Management</h3>
+        <p>Full-spectrum SCM: supplier auditing, quality verification, regulatory clearance, contract structuring, and local distribution.</p>
+      </div>
+      <div class="pillar reveal">
+        <span class="pnum mono">04</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><path d="M7 15l3-4 3 2 4-6"/></svg></div>
+        <h3>Engineering-Led Advisory</h3>
+        <p>Independent guidance on supplier mix, re-qualified alternatives, and parts-level risk — helping you avoid single points of failure.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-            <div class="market-card">
-                <h3><span class="badge">Latin America</span> LATAM Region Market</h3>
-                <p>Building specialized distribution and import channels for automotive assemblies and medical/industrial diagnostic systems in Chile, Brazil, Colombia, and Mexico.</p>
-            </div>
+<!-- PORTFOLIO -->
+<section class="portfolio" id="portfolio">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow on-dark">Portfolio</span>
+      <h2>Automotive electronics, built for global standard compliance</h2>
+      <p>Each sourcing scope is qualified against the certifications your destination market requires — read this like a datasheet.</p>
+    </div>
+    <div class="ds reveal">
+      <div class="ds-row ds-head">
+        <span class="k">Sector</span>
+        <span class="k">Key sourcing & supply scope</span>
+        <span class="k" style="text-align:right">Standards</span>
+      </div>
+      <div class="ds-row">
+        <div class="ds-sector">Control Units & Electronics<small>ECU / BCM</small></div>
+        <div class="ds-scope"><b>Electronic Control Units (ECU)</b>, automotive sensors, high-reliability vehicle PCBs/PCBAs, smart key systems, and Body Control Modules (BCM).</div>
+        <div class="ds-std"><span>IATF 16949</span> <span>AEC-Q100</span></div>
+      </div>
+      <div class="ds-row">
+        <div class="ds-sector">EV & Powertrain<small>ELECTRIFICATION</small></div>
+        <div class="ds-scope"><b>EV powertrain components</b>, Battery Management Systems (BMS), On-Board Chargers (OBC), and power inverters.</div>
+        <div class="ds-std"><span>ISO 26262</span> <span>AEC-Q101</span></div>
+      </div>
+      <div class="ds-row">
+        <div class="ds-sector">Display & Telematics<small>IN-VEHICLE</small></div>
+        <div class="ds-scope"><b>Automotive displays</b>, ADAS camera & sensing modules, telematics controllers, and vehicle networking hardware.</div>
+        <div class="ds-std"><span>IATF 16949</span> <span>AEC-Q200</span></div>
+      </div>
+      <div class="ds-row">
+        <div class="ds-sector">Medical & Industrial<small>EXTENDED</small></div>
+        <div class="ds-scope"><b>Diagnostic medical equipment</b>, breath analysis systems, certified consumables, and precision-machined industrial components.</div>
+        <div class="ds-std"><span>ISO 13485</span> <span>ANVISA</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-            <div class="market-card" style="border-left-color: #38bdf8;">
-                <h3><span class="badge" style="background:#1d4ed8;">Extended Scope</span> Medical & Precision Industrial Sourcing</h3>
-                <p>Advanced medical diagnostic devices, breath analysis systems, certified consumables, and precision-machined industrial engineering components.</p>
-            </div>
+<!-- MARKETS -->
+<section id="markets">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Target markets</span>
+      <h2>Specialized trade corridors into frontier growth regions</h2>
+      <p>We build durable import and distribution channels where technical reliability and local compliance decide who wins the market.</p>
+    </div>
+    <div class="markets">
+      <div class="mkt reveal">
+        <div class="mkt-top">
+          <span class="rgn">GCC Region</span>
+          <h3>Middle East Market</h3>
         </div>
-    </section>
-
-    <!-- Strategic Process Model -->
-    <section class="section" id="process">
-        <div class="container">
-            <div class="section-title">
-                <h2>Strategic Process Model</h2>
-                <p>Systematic Execution from Technical Audit to Post-Market Growth</p>
-            </div>
-            <div class="process-steps">
-                <div class="step">
-                    <div class="step-num">01</div>
-                    <h4>Audit & Sourcing</h4>
-                    <p>Evaluating Korean/Asian manufacturing facilities meeting automotive/medical quality standards.</p>
-                </div>
-                <div class="step">
-                    <div class="step-num">02</div>
-                    <h4>Compliance</h4>
-                    <p>Managing regional certifications, tariff optimization, and customs clearance pathways.</p>
-                </div>
-                <div class="step">
-                    <div class="step-num">03</div>
-                    <h4>SCM & Contract</h4>
-                    <p>Structuring commercial terms and executing end-to-end global supply chain logistics.</p>
-                </div>
-                <div class="step">
-                    <div class="step-num">04</div>
-                    <h4>Channel Support</h4>
-                    <p>Providing technical support, warranty management, and expanding local B2B distributor networks.</p>
-                </div>
-            </div>
+        <p>Serving Tier-1 / Tier-2 automotive suppliers, aftermarket distributors, and industrial equipment importers across Saudi Arabia, the UAE, Qatar, and Kuwait.</p>
+        <div class="tags"><span>Saudi Arabia</span><span>UAE</span><span>Qatar</span><span>Kuwait</span><span>SASO</span></div>
+      </div>
+      <div class="mkt latam reveal">
+        <div class="mkt-top">
+          <span class="rgn">LATAM Region</span>
+          <h3>Latin America Market</h3>
         </div>
-    </section>
-
-    <!-- Footer / Contact -->
-    <footer id="contact">
-        <div class="footer-container">
-            <div class="footer-info">
-                <h3>TRONEX ENGINEERING</h3>
-                <p><strong>Global Trade Division:</strong> trade@tronexengineering.co.kr</p>
-                <p><strong>Core Specialization:</strong> Automotive Electronics, Medical Diagnostic Equipment, Precision Sourcing</p>
-                <p><strong>Target Regions:</strong> Middle East (GCC), Latin America (LATAM), East Asia</p>
-            </div>
+        <p>Building specialized import and distribution channels for automotive assemblies and diagnostic medical systems across Chile, Brazil, Colombia, and Mexico.</p>
+        <div class="tags"><span>Chile</span><span>Brazil</span><span>Colombia</span><span>Mexico</span><span>ANVISA</span></div>
+      </div>
+      <div class="mkt ext reveal">
+        <div class="mkt-top">
+          <span class="rgn">Extended</span>
+          <h3>Medical & Industrial Sourcing</h3>
         </div>
-        <div class="copyright">
-            &copy; TRONEX ENGINEERING. All Rights Reserved.
-        </div>
-    </footer>
+        <p>Advanced diagnostic medical equipment, breath analysis systems, certified consumables, and precision-machined engineering components for specialized buyers.</p>
+        <div class="tags"><span>Diagnostics</span><span>Consumables</span><span>Precision parts</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- CAPABILITY / IMPACT -->
+<section class="cap" id="approach">
+  <div class="wrap cap-grid">
+    <div class="reveal">
+      <span class="eyebrow">Why Tronex</span>
+      <h2 style="font-size:clamp(1.8rem,3.2vw,2.4rem);color:var(--navy);margin:16px 0 10px;">Structured like an engineering project, executed like a trading desk</h2>
+      <p style="color:var(--ink-soft);">Drawings, datasheets, and manufacturing constraints are correctly understood <em>before</em> POs are issued and commitments are made.</p>
+      <div class="cap-list">
+        <div class="cap-item"><span class="cn mono">A1</span><div><h4>Understand the system, not just the part</h4><p>We start from the application — how a component behaves in your system, what failure looks like, and which constraints matter most.</p></div></div>
+        <div class="cap-item"><span class="cn mono">A2</span><div><h4>Map options and trade-offs</h4><p>Exact equivalents to re-qualified alternatives, with clear trade-offs in lead time, price, performance, and risk.</p></div></div>
+        <div class="cap-item"><span class="cn mono">A3</span><div><h4>Execute with documented alignment</h4><p>Specs, test conditions, and agreed changes captured in writing — reducing misunderstandings across time zones.</p></div></div>
+      </div>
+    </div>
+    <div class="cap-panel reveal">
+      <div class="glow"></div>
+      <h3>Impact you can measure</h3>
+      <p class="sub">Fewer surprises — at qualification, in production, and when supply shifts faster than expected.</p>
+      <div class="metrics">
+        <div class="metric"><b>Single view</b><span>Qualification clarity</span></div>
+        <div class="metric"><b>Reduced</b><span>Supplier risk</span></div>
+        <div class="metric"><b>Focused</b><span>Team effort</span></div>
+        <div class="metric"><b>Traceable</b><span>Decision history</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Business process</span>
+      <h2>Systematic execution, from sourcing to post-market growth</h2>
+    </div>
+    <div class="proc reveal">
+      <div class="step">
+        <span class="sn mono">01 · AUDIT</span>
+        <div class="bar"></div>
+        <h4>Audit & Sourcing</h4>
+        <p>Evaluating and qualifying manufacturers that meet strict automotive and medical standards.</p>
+      </div>
+      <div class="step">
+        <span class="sn mono">02 · COMPLY</span>
+        <div class="bar"></div>
+        <h4>Compliance</h4>
+        <p>Managing regional certifications, tariffs, and customs clearance pathways.</p>
+      </div>
+      <div class="step">
+        <span class="sn mono">03 · SCM</span>
+        <div class="bar"></div>
+        <h4>SCM & Contract</h4>
+        <p>Structuring commercial terms and executing global supply-chain logistics.</p>
+      </div>
+      <div class="step">
+        <span class="sn mono">04 · GROW</span>
+        <div class="bar"></div>
+        <h4>Channel Support</h4>
+        <p>Technical warranty support and expansion of B2B distribution networks.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="hero-grid-bg"></div>
+  <div class="wrap contact-in">
+    <div class="reveal">
+      <span class="eyebrow on-dark">Contact</span>
+      <h2>Talk to Tronex about your components and market entry</h2>
+      <p class="lead">Share a short overview of your product, key components, and target market — a new supplier, qualified alternatives, or a reliable partner in Korea to coordinate technical trade.</p>
+      <div class="contact-meta">
+        <div class="cm"><div class="k">Global Trade Division</div><div class="v">trade@tronexengineering.co.kr</div></div>
+        <div class="cm"><div class="k">Location</div><div class="v">Seoul, Republic of Korea · Remote-first</div></div>
+        <div class="cm"><div class="k">Coverage</div><div class="v">Middle East (GCC) · Latin America (LATAM) · East Asia</div></div>
+        <div class="cm"><div class="k">Core focus</div><div class="v">Automotive Electronics · Diagnostic Medical · High-Tech Sourcing</div></div>
+      </div>
+    </div>
+    <div class="form reveal">
+      <p class="note">We typically respond within two business days. If you already have drawings, datasheets, or a preferred manufacturer list, mention it so we can respond precisely.</p>
+      <div class="field"><label>Name</label><input type="text" placeholder="Full name" /></div>
+      <div class="field"><label>Work email</label><input type="email" placeholder="name@company.com" /></div>
+      <div class="field"><label>Target market</label>
+        <select><option>Middle East (GCC)</option><option>Latin America (LATAM)</option><option>East Asia</option><option>Other / multiple</option></select>
+      </div>
+      <div class="field"><label>Your requirement</label><textarea placeholder="Briefly describe your components, quantities, timelines, and what you're exploring."></textarea></div>
+      <button class="btn-primary" onclick="alert('Thank you. Please also reach us at trade@tronexengineering.co.kr — this demo form does not submit.')">Send message →</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="ft">
+  <div class="wrap ft-in">
+    <span class="cp">© 2026 Tronex Engineering. All rights reserved.</span>
+    <div class="ft-links">
+      <a href="#pillars">Capabilities</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#markets">Markets</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach((el,i)=>{ el.style.transitionDelay=(i%4*60)+'ms'; io.observe(el); });
+</script>
 </body>
 </html>
